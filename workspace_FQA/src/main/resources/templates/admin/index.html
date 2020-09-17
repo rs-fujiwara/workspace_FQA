@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>FQA登録画面</title>
+<script src="/scripts/jquery-3.3.1.min.js"></script>
+<script src="/scripts/base/base.js"></script>
+<link href="/css/admin/style.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<div class="top">
+			<div class="dropdown" style="float: right">
+				<button class="dropbtn">admin</button>
+				<div class="dropdown-content">
+					<a href="/adminLogOut">ログアウト</a>
+				</div>
+			</div>
+		</div>
+		<div class="bodyer">
+			<div class="bd-left">
+				<ul>
+					<li id="click_1"><a class="border-color" href="#">FQA管理</a></li>
+					<div class="funBackgroungColor">
+						<li id="fun1" class="hidden"><a href="/addFqaPage">FQA新規追加</a></li>
+						<li id="fun2" class="hidden"><a>FQA一覧表示</a></li>
+						<li id="fun2" class="hidden"><a>FQA編集</a></li>
+					</div>
+				</ul>
+			</div>
+<!-- 			<div style="margin-left: 50%; padding: 1px 16px;">
+				<h2>FQA管理システム</h2>
+			</div> -->
+			<div class="bd-right">
+			   <h2 style="text-align: center;">FQA管理システム</h2>
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+</html>

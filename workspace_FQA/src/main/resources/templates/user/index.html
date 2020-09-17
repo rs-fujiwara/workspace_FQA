@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>FQA登録画面</title>
+<script src="/scripts/jquery-3.3.1.min.js"></script>
+<script src="/scripts/jquery.validate.min.js"></script>
+<script src="/scripts/base/index.js"></script>
+<script src="/scripts/base/base.js"></script>
+<link href="/css/user/layout.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<div class="top" id="pagetitle">
+			<div>
+				<h2 style="text-align: left; margin-left: 10px">よくあるご質問（FAQ）</h2>
+			</div>
+		</div>
+
+		<div class="bodyer">
+			<div class="bd-left">
+				<div class="bluept01b">
+					<h3 class="title" style="text-align: left; margin-left: 8px">カテゴリから検索</h3>
+				</div>
+				<div class="funBackgroungColor">
+					<div>
+						<a>製品・使い方</a>
+					</div>
+					<div>
+						<a>サービス</a>
+					</div>
+					<div>
+						<a>手続き・料金 </a>
+					</div>
+				</div>
+			</div>
+			<div class="bd-right-box1">
+				<div class="titlept01">
+					<div class="bluept01">
+						<h3 class="title">キーワードから検索</h3>
+					</div>
+				</div>
+				<div class="formArea">
+					<form name="selectFaqForm" action="#" method="get" onsubmit="">
+						<div class="bluept02"
+							style="display: inline-block; _display: inline; vertical-align: bottom">
+							<input type="text" id="search" name="kw" autocomplete="off"
+								value=""
+								onfocus="on_Suggest('search','suggest','ajax_suggest.ajax','p');"
+								onblur="off_Suggest('search')" maxlength="100"
+								style="width: 550px; height: 1.6em; padding: 0px; vertical-align: bottom; z-index: 13">
+						</div>
+						<div
+							style="display: inline-block; _display: inline; vertical-align: bottom">
+							<input type="submit" value="検索"
+								style="color: #ffffff; background: #862067; width: 70px; padding: 1px; cursor: pointer; vertical-align: bottom">
+							<br>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="bd-right-box2">
+
+				<div class="line-color">
+					<h3>検索結果</h3>
+				</div>
+				<div>
+					<ul style="list-style-type: none"
+						th:each="content:${page.getList()}">
+						<li class="line"><img
+							style="width: 13px; height: 13px; margin-right: 4px"
+							th:src="@{/img/02.jpg}"><a
+							th:href="@{'/contents/'+ ${content.getCid()}}"
+							th:text="${content.getFqaQuestion()}"></a></li>
+					</ul>
+				</div>
+				<div>
+					<div style="margin-left: 30px">
+						<a id="prePage" th:href="@{'/page/'+${page.getPageNum()-1}}">前のページ
+						</a> <label id="lab1" th:text="${page.getPageNum()}"></label>/<label
+							id="lab2" th:text="${page.getPageCount()}"></label> <a
+							id="nextPage" th:href="@{'/page/'+${page.getPageNum()+1}}">次のページ</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

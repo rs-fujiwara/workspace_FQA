@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>FQA登録画面</title>
+<script src="/scripts/jquery-3.3.1.min.js"></script>
+<script src="/scripts/jquery.validate.min.js"></script>
+<script src="/scripts/admin/addFqa.js"></script>
+<script src="/scripts/base/base.js"></script>
+<link href="/css/admin/style.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<div class="top">
+			<div class="dropdown" style="float: right">
+				<button class="dropbtn">admin</button>
+				<div class="dropdown-content">
+					<a href="/adminLogOut">ログアウト</a>
+				</div>
+			</div>
+		</div>
+		<div class="bodyer">
+			<div class="bd-left">
+				<ul>
+					<li id="click_1"><a href="#">FQA管理</a></li>
+					<div class="funBackgroungColor">
+						<li id="fun1" class="hidden"><a href="/addFqaPage">FQA新規追加</a></li>
+						<li id="fun2" class="hidden"><a>FQA一覧表示</a></li>
+						<li id="fun2" class="hidden"><a>FQA編集</a></li>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="bd-right">
+			<div style="margin-left:5px; padding: 1px 16px;">
+				<h3 style="text-align: center">FQA新規追加</h3>
+				<form id="addContentForm" action="#">
+					<!--  
+    <label>質問（Q）</label><br>
+    <input id="fqaQuestion" type="text" name="fqaQuestion"/></br></br>
+    <label>答え（A）</label><br>
+    <input id="fqaContent" type="text" name="fqaContent"/></br></br> -->
+					<label>質問（Q）</label><br>
+					<textarea id="fqaQuestion" name="fqaQuestion" rows="5" cols=",50"
+						warp="virtual"></textarea>
+					<br></br> <label>答え（A）</label><br>
+					<textarea id="fqaContent" name="fqaContent" rows="5" cols=",50"
+						warp="virtual"></textarea>
+					<br></br> <label>親カテゴリー</label><br> <select  style="height:30px"
+						id="parentCategory" name="parentCategory" onchange="setSelectChild()">
+					</select><br></br> <label>子カテゴリー</label><br> <select id="childCategory"
+						name="childCategory" style="width:235px; height:30px">
+						<option selected="selected"></option>
+					</select><br> <br> <input id="btn1" type="submit" value="追加">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

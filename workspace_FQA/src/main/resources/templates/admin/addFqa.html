@@ -25,7 +25,7 @@
 					<li id="click_1"><a href="#">FQA管理</a></li>
 					<div class="funBackgroungColor">
 						<li id="fun1" class="hidden"><a href="/addFqaPage">FQA新規追加</a></li>
-						<li id="fun2" class="hidden"><a>FQA一覧表示</a></li>
+						<li id="fun2" class="hidden"><a href="/fqaList">FQA一覧表示</a></li>
 						<li id="fun2" class="hidden"><a>FQA編集</a></li>
 					</div>
 				</ul>
@@ -51,7 +51,10 @@
 					</select><br></br> <label>子カテゴリー</label><br> <select id="childCategory"
 						name="childCategory" style="width:235px; height:30px">
 						<option selected="selected"></option>
-					</select><br> <br> <input id="btn1" type="submit" value="追加">
+					</select><br> <br><label>公開設定</label><br>
+					<input style="width:20px; height:20px" type="radio" id="delFlag" name="delFlag" value="0">公開
+					<input style="width:20px; height:20px" type="radio" id="delFlag" name="delFlag" value="1">非公開
+					<span style="margin:30px"></span><br> <br> <input id="btn1" type="submit" value="追加">
 				</form>
 			</div>
 		</div>

@@ -28,14 +28,14 @@ public class ContentsService implements IContentsService {
 	 * 
 	 */
 	@Override
-	public Page<Contents> selectContentsByPageNum(int pageNum) {
+	public Page<Contents> selectContentsByPageNum(int pageNum,Integer _delFlag) {
 		Page<Contents> page = new Page<>();
 		List<Contents> list = contentsMapper.selectByPageNum((pageNum - 1) * WebConst.Max_Page_count,
-				WebConst.Max_Page_count);
+				WebConst.Max_Page_count,_delFlag);
 		page.setPageSize(WebConst.Max_Page_count);
 		page.setPageNum(pageNum);
 		page.setList(list);
-		int recordCount = contentsMapper.selectAllCount();
+		int recordCount = contentsMapper.selectAllCount(_delFlag);
 		int pageCount = recordCount / WebConst.Max_Page_count;
 		if (pageCount % WebConst.Max_Page_count != 0) {
 			pageCount++;
@@ -43,10 +43,10 @@ public class ContentsService implements IContentsService {
 		page.setPageCount(pageCount);
 		return page;
 	}
-	
+
 	@Override
 	public Contents getContents(int cid) {
 		Contents contents = contentsMapper.selectByPrimaryKey(cid);
-		return contents;
+		return contents;		
 	}
 }

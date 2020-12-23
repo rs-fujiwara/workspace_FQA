@@ -24,6 +24,9 @@ function validateAddBookForm() {
             },
             childCategory:{
                 required:false
+            },
+            delFlag:{
+                required:true
             }
         } ,
         messages:{
@@ -39,6 +42,17 @@ function validateAddBookForm() {
             },
             childCategory:{
                 required:"カテゴリーを入力してください"
+            },
+            delFlag:{
+                required:"公開設定を選択してください"
+            }
+        },
+        errorPlacement:function(error,element){
+            if(element.attr("name")=="delFlag"){
+                //error.insertAfter("#delFlag");
+                error.appendTo($('span'));
+            }else{
+                error.insertAfter(element);
             }
         }
     });

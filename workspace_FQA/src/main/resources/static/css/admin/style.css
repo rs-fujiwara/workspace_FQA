@@ -122,3 +122,21 @@ td {
 	width:700px;
 	height:180px
 }
+
+.line {
+	margin-bottom: 5px;
+}
+
+ul {
+	border-bottom: solid 1px green;
+	margin-right: 15px
+}
+
+table{
+	margin-left: 200px;
+}
+th, td{
+	padding: 10px 10px;
+	text-align:left;
+}
+

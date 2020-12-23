@@ -96,5 +96,26 @@ public class AdminServicreImpl implements IAdminService {
     public List<ChildCategory> ChildCategoryInfo(int parent_category_id){
     	return childCategoryMapper.ChildCategoryInfo(parent_category_id);
     }
-
+	
+	@Override
+    public List<ChildCategory> ChildCategoryInfoForInitial(int parent_category_id){
+    	return childCategoryMapper.ChildCategoryInfoForInitial(parent_category_id);
+    }
+	
+	@Override
+	public boolean delFqaByCid(Integer cid){
+        int n=contentsMapper.deleteByPrimaryKey(cid);
+        if(n>0){
+            return true;
+        }
+        return false;
+    }	
+	@Override
+	public boolean updateFqaByCid(ExContents record){
+		int n = contentsMapper.updateByPrimaryKey(record);
+        if(n>0){
+            return true;
+        }
+        return false;
+    }
 }

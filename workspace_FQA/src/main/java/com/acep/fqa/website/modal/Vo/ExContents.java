@@ -1,10 +1,11 @@
 package com.acep.fqa.website.modal.Vo;
 
-import java.io.Serializable;
-
 @SuppressWarnings("serial")
-public class Contents implements Serializable {
-    private Integer cid;
+public class ExContents extends Contents {
+
+	private String changeType;
+
+	private Integer cid;
 
     private String fqaQuestion;
 
@@ -66,4 +67,11 @@ public class Contents implements Serializable {
         this.delFlag = delFlag;
     }
     
+    public String getChangeType() {
+        return changeType;
+    }
+
+    public void setChangeType(String changeType) {
+        this.changeType = changeType;
+    }
 }

@@ -10,11 +10,10 @@ public interface IContentsService {
 	 * @param pageNum
 	 * @return
 	 */
-	public Page<Contents> selectContentsByPageNum(int pageNum);
+	public Page<Contents> selectContentsByPageNum(int pageNum,Integer _delFlag);
 
 	public Contents getContents(int cid);
 
-	
 	/**
 	 * ホームページページ送り
 	 * @param p

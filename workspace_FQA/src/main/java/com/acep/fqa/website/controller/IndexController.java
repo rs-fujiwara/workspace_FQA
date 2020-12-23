@@ -40,7 +40,7 @@ public class IndexController extends BaseController {
 	 */
 	@GetMapping(value = "page/{pageNum}")
 	public String index(@PathVariable int pageNum, Model model) {
-		Page<Contents> page = contentsService.selectContentsByPageNum(pageNum);
+		Page<Contents> page = contentsService.selectContentsByPageNum(pageNum,0);
 		model.addAttribute("page", page);
 		return this.render("index");
 	}
@@ -57,6 +57,6 @@ public class IndexController extends BaseController {
 		Contents contents = contentsService.getContents(cid);
 		model.addAttribute("question", contents.getFqaQuestion());
 		model.addAttribute("content", contents.getFqaContent());
-		return this.render("post");
+		return this.render("post");		
 	}
 }

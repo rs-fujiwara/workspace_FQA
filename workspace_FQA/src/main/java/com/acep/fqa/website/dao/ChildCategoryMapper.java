@@ -30,6 +30,9 @@ public interface ChildCategoryMapper {
 
     int updateByPrimaryKey(ChildCategory record);
     
-    @Select("select child_category_name from child_category where parent_category_id=#{parent_category_id}")
+    @Select("select child_category_id,child_category_name from child_category where parent_category_id=#{parent_category_id}")
     public List<ChildCategory> ChildCategoryInfo(@Param("parent_category_id") int parent_category_id);
+    
+    @Select("select row_number() over(order by child_category_id ASC)as child_category_id,child_category_name FROM child_category where parent_category_id=#{parent_category_id}")
+    public List<ChildCategory> ChildCategoryInfoForInitial(@Param("parent_category_id") int parent_category_id);
 }

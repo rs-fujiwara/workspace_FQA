@@ -3,7 +3,8 @@ package com.acep.fqa.website.service;
 import java.util.List;
 
 import com.acep.fqa.website.modal.Vo.ChildCategory;
-import com.acep.fqa.website.modal.Vo.Contents;
+import com.acep.fqa.website.modal.Vo.*;
+import com.acep.fqa.website.modal.Vo.ExContents;
 import com.acep.fqa.website.modal.Vo.ParentCategory;
 
 public interface IAdminService {
@@ -46,6 +47,19 @@ public interface IAdminService {
 	boolean addParentCategorys(ParentCategory parentCategory);
 
 	List<ChildCategory> ChildCategoryInfo(int parent_category_id);
-
+	
+    /**
+     * FQA削除
+     * @return
+     */
+	public boolean delFqaByCid(Integer cid);
+	
+    /**
+     * FQA更新
+     * @return
+     */
+	public boolean updateFqaByCid(ExContents record);
+	
+	public List<ChildCategory> ChildCategoryInfoForInitial(int parent_category_id);
 
 }

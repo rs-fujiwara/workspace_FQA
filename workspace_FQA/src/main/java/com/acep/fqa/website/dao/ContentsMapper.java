@@ -1,6 +1,7 @@
 package com.acep.fqa.website.dao;
 
 import com.acep.fqa.website.modal.Vo.Contents;
+import com.acep.fqa.website.modal.Vo.ExContents;
 import com.acep.fqa.website.modal.Vo.ContentsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
@@ -32,11 +33,11 @@ public interface ContentsMapper {
 
     int updateByPrimaryKeyWithBLOBs(Contents record);
 
-    int updateByPrimaryKey(Contents record);
+    int updateByPrimaryKey(ExContents record);
     
     //ページ送り
-    List<Contents> selectByPageNum(@Param("currIndex") int currIndex,@Param("pageSize")int pageSize);
+    List<Contents> selectByPageNum(@Param("currIndex") int currIndex,@Param("pageSize")int pageSize,@Param("_delFlag")Integer _delFlag);
     
-    int selectAllCount();
+    int selectAllCount(@Param("_delFlag")Integer _delFlag);
 
 }
